@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Main</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="flex">
+  <!-- title -->
+ <ion-header [translucent]="true" collapse="condense" class="ion-margin-top-btm">
+   <ion-toolbar>
+     <ion-title size="large" class="ion-title">Pay Calculator</ion-title>
+   </ion-toolbar>
+ </ion-header>
+   
+   <!-- input -->
+   <ion-item>
+    <ion-label class = "label">Numbers of Hours:</ion-label>
+    <ion-input
+    class = "input-values"
+      type="number"
+      id="input-hours"
+      [(ngModel)]="numberOfHours"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class = "label">Hourly Rate: </ion-label>
+    <ion-input
+    class = "input-values"
+      type="number"
+      id="input-rate"
+      [(ngModel)]="hourlyRate"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calculatePay()" class = "btn-style" expand="block">Calculate!</ion-button>
+
+  <ion-item>
+    <ion-label class = "label"> Regular Pay: {{regularPay}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class = "label">Overtime Pay: {{overtimePay}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class = "label">Total Pay: {{totalPay}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class = "label">Tax: {{tax}}</ion-label>
+  </ion-item>
+</ion-content>
